@@ -1,19 +1,20 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
 const connectDB = require('./config/db');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
 
-// Only load dotenv in development
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+dotenv.config();
 
 connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://mern-stack-integration-kimenjuivy.vercel.app'],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
