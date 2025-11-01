@@ -1,11 +1,13 @@
 const express = require('express');
-const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
 const connectDB = require('./config/db');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
 
-dotenv.config();
+// Only load dotenv in development
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
 connectDB();
 
