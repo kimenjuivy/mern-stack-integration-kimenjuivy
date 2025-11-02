@@ -12,11 +12,15 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://mern-stack-integration-kimenjuivy-snowy.vercel.app'],
+  origin: [
+    'http://localhost:3000',
+    'https://mern-stack-integration-kimenjuivy.vercel.app' // 👈 correct domain
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
