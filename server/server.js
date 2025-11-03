@@ -17,7 +17,7 @@ if (!fs.existsSync('uploads')) {
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://mern-stack-integration-kimenjuivy-snowy.vercel.app'],
+  origin: ['http://localhost:3000', 'https://mernstack-integration-kimenjuivy.vercel.app/'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
