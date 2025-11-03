@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 const connectDB = require('./config/db');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
 
@@ -9,18 +10,18 @@ dotenv.config();
 
 connectDB();
 
+if (!fs.existsSync('uploads')) {
+  fs.mkdirSync('uploads');
+}
+
 const app = express();
 
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://mern-stack-integration-kimenjuivy.vercel.app' // 👈 correct domain
-  ],
+  origin: ['http://localhost:3000', 'https://mern-stack-integration-kimenjuivy-snowy.vercel.app'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

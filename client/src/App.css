@@ -885,7 +885,8 @@ body {
   font-size: 1rem;
   font-family: inherit;
   transition: all 0.3s ease;
-  background: #f7fafc;
+  background: white;
+  color: #1a202c;
 }
 
 .form-group input:focus,
@@ -1024,4 +1025,5 @@ body {
   background: white;
   padding: 1.5rem;
   border-radius: 15px;
-  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
