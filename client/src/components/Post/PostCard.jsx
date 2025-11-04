@@ -5,7 +5,7 @@ const PostCard = ({ post }) => {
     <div className="post-card">
       {post.image && (
         <img 
-          src={`http://localhost:5000${post.image}`} 
+          src={post.image} 
           alt={post.title}
           className="post-image"
         />

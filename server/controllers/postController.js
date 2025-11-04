@@ -104,7 +104,7 @@ const updatePost = async (req, res) => {
       post.published = req.body.published !== undefined ? req.body.published : post.published;
       
       if (req.file) {
-        post.image = `/uploads/${req.file.filename}`;
+        post.image = req.file.path;
       }
 
       const updatedPost = await post.save();

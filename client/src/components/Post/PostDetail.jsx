@@ -51,7 +51,7 @@ const PostDetail = () => {
       <article className="post-content">
         {post.image && (
           <img 
-            src={`http://localhost:5000${post.image}`} 
+            src={post.image} 
             alt={post.title}
             className="post-detail-image"
           />
