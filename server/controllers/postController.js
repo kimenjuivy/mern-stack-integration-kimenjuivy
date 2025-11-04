@@ -71,7 +71,7 @@ const createPost = async (req, res) => {
       category,
       author: req.user._id,
       published: published !== undefined ? published : true,
-      image: req.file ? `/uploads/${req.file.filename}` : ''
+      image: req.file ? req.file.path : ''
     });
 
     const populatedPost = await Post.findById(post._id)
